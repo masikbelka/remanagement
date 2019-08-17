@@ -1,0 +1,30 @@
+{
+  "remanagementApp": {
+    "tenant": {
+      "home": {
+        "title": "Tenants",
+        "createLabel": "Создать новый Tenant",
+        "createOrEditLabel": "Создать или отредактировать Tenant",
+        "notFound": "No Tenants found"
+      },
+      "created": "Новый Tenant создан с идентификатором {{ param }}",
+      "updated": "Tenant обновлен с идентификатором {{ param }}",
+      "deleted": "Tenant удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Tenant {{ id }}?"
+      },
+      "detail": {
+        "title": "Tenant"
+      },
+      "qid": "Qid",
+      "name": "Name",
+      "arabicName": "Arabic Name",
+      "telephone": "Telephone",
+      "fax": "Fax",
+      "mobile": "Mobile",
+      "email": "Email",
+      "pobox": "Pobox",
+      "contract": "Contract"
+    }
+  }
+}

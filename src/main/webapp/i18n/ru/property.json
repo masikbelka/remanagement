@@ -1,0 +1,32 @@
+{
+  "remanagementApp": {
+    "property": {
+      "home": {
+        "title": "Properties",
+        "createLabel": "Создать новый Property",
+        "createOrEditLabel": "Создать или отредактировать Property",
+        "notFound": "No Properties found"
+      },
+      "created": "Новый Property создан с идентификатором {{ param }}",
+      "updated": "Property обновлен с идентификатором {{ param }}",
+      "deleted": "Property удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Property {{ id }}?"
+      },
+      "detail": {
+        "title": "Property"
+      },
+      "code": "Code",
+      "name": "Name",
+      "number": "Number",
+      "type": "Type",
+      "bedrooms": "Bedrooms",
+      "furnishing": "Furnishing",
+      "electricity": "Electricity",
+      "water": "Water",
+      "parking": "Parking",
+      "location": "Location",
+      "contract": "Contract"
+    }
+  }
+}

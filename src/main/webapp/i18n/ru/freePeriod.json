@@ -1,0 +1,25 @@
+{
+  "remanagementApp": {
+    "freePeriod": {
+      "home": {
+        "title": "Free Periods",
+        "createLabel": "Создать новый Free Period",
+        "createOrEditLabel": "Создать или отредактировать Free Period",
+        "notFound": "No Free Periods found"
+      },
+      "created": "Новый Free Period создан с идентификатором {{ param }}",
+      "updated": "Free Period обновлен с идентификатором {{ param }}",
+      "deleted": "Free Period удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Free Period {{ id }}?"
+      },
+      "detail": {
+        "title": "Free Period"
+      },
+      "code": "Code",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "contract": "Contract"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tenant">
+            <h2><span jhiTranslate="remanagementApp.tenant.detail.title">Tenant</span> {{tenant.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="remanagementApp.tenant.qid">Qid</span></dt>
+                <dd>
+                    <span>{{tenant.qid}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenant.name">Name</span></dt>
+                <dd>
+                    <span>{{tenant.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenant.arabicName">Arabic Name</span></dt>
+                <dd>
+                    <span>{{tenant.arabicName}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenant.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{tenant.telephone}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenant.fax">Fax</span></dt>
+                <dd>
+                    <span>{{tenant.fax}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenant.mobile">Mobile</span></dt>
+                <dd>
+                    <span>{{tenant.mobile}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenant.email">Email</span></dt>
+                <dd>
+                    <span>{{tenant.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenant.pobox">Pobox</span></dt>
+                <dd>
+                    <span>{{tenant.pobox}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tenant', tenant.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

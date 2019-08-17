@@ -1,0 +1,9 @@
+{
+  "remanagementApp": {
+    "Furnishing": {
+      "null": "",
+      "FURNISHED": "FURNISHED",
+      "UNFURNISHED": "UNFURNISHED"
+    }
+  }
+}

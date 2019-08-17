@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contractDocumentEntryRow">
+            <h2><span jhiTranslate="remanagementApp.contractDocumentEntryRow.detail.title">Contract Document Entry Row</span> {{contractDocumentEntryRow.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="remanagementApp.contractDocumentEntryRow.position">Position</span></dt>
+                <dd>
+                    <span>{{contractDocumentEntryRow.position}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.contractDocumentEntryRow.textEn">Text En</span></dt>
+                <dd>
+                    <span>{{contractDocumentEntryRow.textEn}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.contractDocumentEntryRow.textAr">Text Ar</span></dt>
+                <dd>
+                    <span>{{contractDocumentEntryRow.textAr}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contract-document-entry-row', contractDocumentEntryRow.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

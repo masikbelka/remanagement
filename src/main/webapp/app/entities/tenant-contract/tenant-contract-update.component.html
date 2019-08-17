@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tenant-contract-heading" jhiTranslate="remanagementApp.tenantContract.home.createOrEditLabel">Create or edit a Tenant Contract</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.tenantContract.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                    <div *ngIf="editForm.get('code').invalid && (editForm.get('code').dirty || editForm.get('code').touched)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.tenantContract.effectiveDate" for="field_effectiveDate">Effective Date</label>
+                    <div class="d-flex">
+                        <input id="field_effectiveDate" type="datetime-local" class="form-control" name="effectiveDate" formControlName="effectiveDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.tenantContract.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" formControlName="startDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.tenantContract.endDate" for="field_endDate">End Date</label>
+                    <div class="d-flex">
+                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" formControlName="endDate" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.tenantContract.rent" for="field_rent">Rent</label>
+                    <input type="number" class="form-control" name="rent" id="field_rent"
+                           formControlName="rent"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.tenantContract.deposit" for="field_deposit">Deposit</label>
+                    <input type="number" class="form-control" name="deposit" id="field_deposit"
+                           formControlName="deposit"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.tenantContract.utilities" for="field_utilities">Utilities</label>
+                    <input type="text" class="form-control" name="utilities" id="field_utilities"
+                           formControlName="utilities"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="remanagementApp.tenantContract.freePeriod" for="field_freePeriods">Free Period</label>
+                    <select class="form-control" id="field_freePeriods" multiple name="freePeriods" formControlName="freePeriods">
+                        <option [ngValue]="getSelected(editForm.get('freePeriods').value, freePeriodOption)" *ngFor="let freePeriodOption of freeperiods; trackBy: trackFreePeriodById">{{freePeriodOption.code}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="remanagementApp.tenantContract.properties" for="field_properties">Properties</label>
+                    <select class="form-control" id="field_properties" multiple name="properties" formControlName="properties">
+                        <option [ngValue]="getSelected(editForm.get('properties').value, propertyOption)" *ngFor="let propertyOption of properties; trackBy: trackPropertyById">{{propertyOption.code}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label jhiTranslate="remanagementApp.tenantContract.tenants" for="field_tenants">Tenants</label>
+                    <select class="form-control" id="field_tenants" multiple name="tenants" formControlName="tenants">
+                        <option [ngValue]="getSelected(editForm.get('tenants').value, tenantOption)" *ngFor="let tenantOption of tenants; trackBy: trackTenantById">{{tenantOption.qid}}, {{tenantOption.name}}, {{tenantOption.email}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.tenantContract.contractDocument" for="field_contractDocument">Contract Document</label>
+                    <select class="form-control" id="field_contractDocument" name="contractDocument" formControlName="contractDocument">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="contractDocumentOption.id === editForm.get('contractDocument').value?.id ? editForm.get('contractDocument').value : contractDocumentOption" *ngFor="let contractDocumentOption of contractdocuments; trackBy: trackContractDocumentById">{{contractDocumentOption.code}}: {{contractDocumentOption.type}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

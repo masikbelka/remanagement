@@ -1,0 +1,81 @@
+entity Tenant {
+	qid String,
+    name String,
+    arabicName String,
+    telephone String,
+    fax String,
+    mobile String,
+    email String,
+    pobox String
+}
+entity TenantContract {
+	code String unique,
+	effectiveDate ZonedDateTime,
+    startDate ZonedDateTime,
+    endDate ZonedDateTime,
+    rent Double,
+    deposit Double,
+    utilities String
+}
+entity Property {
+    code String unique,
+	name String,
+    number String,
+    type UnitType,
+    bedrooms Integer,
+    furnishing Furnishing,
+    electricity Integer,
+    water Integer,
+    parking Integer
+
+}
+enum UnitType {
+	VILLA,
+    APPARTMENT,
+	OFFICE_SPACE,
+    SHOWROOM
+}
+
+entity FreePeriod {
+	code String,
+	startDate ZonedDateTime,
+    endDate ZonedDateTime
+}
+enum Furnishing {
+	FURNISHED,
+    UNFURNISHED
+}
+entity Location {
+	city String,
+    building String,
+    zone String,
+    street String
+}
+entity ContractDocument {
+	code String unique,
+    type ContractDocumentType,
+    fileName String
+}
+entity ContractDocumentEntryRow {
+    position Integer,
+    textEn String,
+    textAr String
+}
+enum ContractDocumentType {
+	LEASE,
+    RENT,
+    SELL
+}
+relationship OneToOne {
+	Property{location} to Location
+}
+relationship ManyToMany {
+	TenantContract{freePeriod(code)} to FreePeriod{contract}
+	TenantContract{properties(code)} to Property{contract}
+	TenantContract{tenants(qid)} to Tenant{contract}
+}
+relationship OneToMany {
+    ContractDocument{tenantContact} to TenantContract
+}
+
+paginate ContractDocument, TenantContract, Tenant, FreePeriod, Property, Location, ContractDocumentEntryRow with pagination

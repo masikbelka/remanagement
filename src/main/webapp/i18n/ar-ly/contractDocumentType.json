@@ -1,0 +1,10 @@
+{
+  "remanagementApp": {
+    "ContractDocumentType": {
+      "null": "",
+      "LEASE": "LEASE",
+      "RENT": "RENT",
+      "SELL": "SELL"
+    }
+  }
+}

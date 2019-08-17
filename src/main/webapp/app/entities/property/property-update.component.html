@@ -1,0 +1,84 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-property-heading" jhiTranslate="remanagementApp.property.home.createOrEditLabel">Create or edit a Property</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                           formControlName="code"/>
+                    <div *ngIf="editForm.get('code').invalid && (editForm.get('code').dirty || editForm.get('code').touched)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.number" for="field_number">Number</label>
+                    <input type="text" class="form-control" name="number" id="field_number"
+                           formControlName="number"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.type" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="VILLA">{{'remanagementApp.UnitType.VILLA' | translate}}</option>
+                        <option value="APPARTMENT">{{'remanagementApp.UnitType.APPARTMENT' | translate}}</option>
+                        <option value="OFFICE_SPACE">{{'remanagementApp.UnitType.OFFICE_SPACE' | translate}}</option>
+                        <option value="SHOWROOM">{{'remanagementApp.UnitType.SHOWROOM' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.bedrooms" for="field_bedrooms">Bedrooms</label>
+                    <input type="number" class="form-control" name="bedrooms" id="field_bedrooms"
+                           formControlName="bedrooms"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.furnishing" for="field_furnishing">Furnishing</label>
+                    <select class="form-control" name="furnishing" formControlName="furnishing" id="field_furnishing">
+                        <option value="FURNISHED">{{'remanagementApp.Furnishing.FURNISHED' | translate}}</option>
+                        <option value="UNFURNISHED">{{'remanagementApp.Furnishing.UNFURNISHED' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.electricity" for="field_electricity">Electricity</label>
+                    <input type="number" class="form-control" name="electricity" id="field_electricity"
+                           formControlName="electricity"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.water" for="field_water">Water</label>
+                    <input type="number" class="form-control" name="water" id="field_water"
+                           formControlName="water"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.parking" for="field_parking">Parking</label>
+                    <input type="number" class="form-control" name="parking" id="field_parking"
+                           formControlName="parking"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="remanagementApp.property.location" for="field_location">Location</label>
+                    <select class="form-control" id="field_location" name="location" formControlName="location">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="locationOption.id === editForm.get('location').value?.id ? editForm.get('location').value : locationOption" *ngFor="let locationOption of locations; trackBy: trackLocationById">{{locationOption.building}},{{locationOption.zone}},{{locationOption.street}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

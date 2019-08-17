@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="property">
+            <h2><span jhiTranslate="remanagementApp.property.detail.title">Property</span> {{property.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="remanagementApp.property.code">Code</span></dt>
+                <dd>
+                    <span>{{property.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.property.name">Name</span></dt>
+                <dd>
+                    <span>{{property.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.property.number">Number</span></dt>
+                <dd>
+                    <span>{{property.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.property.type">Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'remanagementApp.UnitType.' + property.type}}">{{property.type}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.property.bedrooms">Bedrooms</span></dt>
+                <dd>
+                    <span>{{property.bedrooms}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.property.furnishing">Furnishing</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'remanagementApp.Furnishing.' + property.furnishing}}">{{property.furnishing}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.property.electricity">Electricity</span></dt>
+                <dd>
+                    <span>{{property.electricity}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.property.water">Water</span></dt>
+                <dd>
+                    <span>{{property.water}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.property.parking">Parking</span></dt>
+                <dd>
+                    <span>{{property.parking}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.property.location">Location</span></dt>
+                <dd>
+                    <div *ngIf="property.location">
+                        <a [routerLink]="['/location', property.location?.id, 'view']">{{property.location?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/property', property.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

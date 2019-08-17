@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity TenantContract.
+    -->
+    <changeSet id="20190817172716-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="tenant_contract_id"
+                                 baseTableName="tenant_contract_free_period"
+                                 constraintName="fk_tenant_contract_free_period_tenant_contract_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tenant_contract"/>
+
+        <addForeignKeyConstraint baseColumnNames="free_period_id"
+                                 baseTableName="tenant_contract_free_period"
+                                 constraintName="fk_tenant_contract_free_period_free_period_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="free_period"/>
+        
+        <addForeignKeyConstraint baseColumnNames="tenant_contract_id"
+                                 baseTableName="tenant_contract_properties"
+                                 constraintName="fk_tenant_contract_properties_tenant_contract_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tenant_contract"/>
+
+        <addForeignKeyConstraint baseColumnNames="properties_id"
+                                 baseTableName="tenant_contract_properties"
+                                 constraintName="fk_tenant_contract_properties_properties_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="property"/>
+        
+        <addForeignKeyConstraint baseColumnNames="tenant_contract_id"
+                                 baseTableName="tenant_contract_tenants"
+                                 constraintName="fk_tenant_contract_tenants_tenant_contract_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tenant_contract"/>
+
+        <addForeignKeyConstraint baseColumnNames="tenants_id"
+                                 baseTableName="tenant_contract_tenants"
+                                 constraintName="fk_tenant_contract_tenants_tenants_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tenant"/>
+        
+        <addForeignKeyConstraint baseColumnNames="contract_document_id"
+                                 baseTableName="tenant_contract"
+                                 constraintName="fk_tenant_contract_contract_document_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contract_document"/>
+
+    </changeSet>
+</databaseChangeLog>

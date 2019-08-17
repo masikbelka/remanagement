@@ -7,6 +7,13 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
+        "tenant": "Tenant",
+        "tenantContract": "Tenant Contract",
+        "property": "Property",
+        "freePeriod": "Free Period",
+        "location": "Location",
+        "contractDocument": "Contract Document",
+        "contractDocumentEntryRow": "Contract Document Entry Row",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
@@ -98,7 +105,8 @@
       "edit": "Edit",
       "open": "Open",
       "save": "Save",
-      "view": "View"
+      "view": "View",
+      "download": "Download"
     },
     "detail": {
       "field": "Field",

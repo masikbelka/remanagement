@@ -1,0 +1,24 @@
+{
+  "remanagementApp": {
+    "contractDocumentEntryRow": {
+      "home": {
+        "title": "Contract Document Entry Rows",
+        "createLabel": "Create a new Contract Document Entry Row",
+        "createOrEditLabel": "Create or edit a Contract Document Entry Row",
+        "notFound": "No Contract Document Entry Rows found"
+      },
+      "created": "A new Contract Document Entry Row is created with identifier {{ param }}",
+      "updated": "A Contract Document Entry Row is updated with identifier {{ param }}",
+      "deleted": "A Contract Document Entry Row is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Contract Document Entry Row {{ id }}?"
+      },
+      "detail": {
+        "title": "Contract Document Entry Row"
+      },
+      "position": "Position",
+      "textEn": "Text En",
+      "textAr": "Text Ar"
+    }
+  }
+}

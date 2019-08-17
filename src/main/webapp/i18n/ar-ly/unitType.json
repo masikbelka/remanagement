@@ -1,0 +1,11 @@
+{
+  "remanagementApp": {
+    "UnitType": {
+      "null": "",
+      "VILLA": "VILLA",
+      "APPARTMENT": "APPARTMENT",
+      "OFFICE_SPACE": "OFFICE_SPACE",
+      "SHOWROOM": "SHOWROOM"
+    }
+  }
+}

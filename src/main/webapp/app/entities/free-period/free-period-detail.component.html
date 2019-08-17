@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="freePeriod">
+            <h2><span jhiTranslate="remanagementApp.freePeriod.detail.title">Free Period</span> {{freePeriod.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="remanagementApp.freePeriod.code">Code</span></dt>
+                <dd>
+                    <span>{{freePeriod.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.freePeriod.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{freePeriod.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.freePeriod.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{freePeriod.endDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/free-period', freePeriod.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

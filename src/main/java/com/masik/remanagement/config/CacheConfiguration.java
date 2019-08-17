@@ -43,6 +43,20 @@ public class CacheConfiguration {
             createCache(cm, com.masik.remanagement.domain.User.class.getName());
             createCache(cm, com.masik.remanagement.domain.Authority.class.getName());
             createCache(cm, com.masik.remanagement.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.masik.remanagement.domain.Tenant.class.getName());
+            createCache(cm, com.masik.remanagement.domain.Tenant.class.getName() + ".contracts");
+            createCache(cm, com.masik.remanagement.domain.TenantContract.class.getName());
+            createCache(cm, com.masik.remanagement.domain.TenantContract.class.getName() + ".tenants");
+            createCache(cm, com.masik.remanagement.domain.TenantContract.class.getName() + ".freePeriods");
+            createCache(cm, com.masik.remanagement.domain.TenantContract.class.getName() + ".properties");
+            createCache(cm, com.masik.remanagement.domain.Property.class.getName());
+            createCache(cm, com.masik.remanagement.domain.Property.class.getName() + ".contracts");
+            createCache(cm, com.masik.remanagement.domain.FreePeriod.class.getName());
+            createCache(cm, com.masik.remanagement.domain.FreePeriod.class.getName() + ".contracts");
+            createCache(cm, com.masik.remanagement.domain.Location.class.getName());
+            createCache(cm, com.masik.remanagement.domain.ContractDocument.class.getName());
+            createCache(cm, com.masik.remanagement.domain.ContractDocument.class.getName() + ".tenantContacts");
+            createCache(cm, com.masik.remanagement.domain.ContractDocumentEntryRow.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

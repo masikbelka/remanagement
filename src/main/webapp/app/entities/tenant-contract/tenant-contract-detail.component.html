@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tenantContract">
+            <h2><span jhiTranslate="remanagementApp.tenantContract.detail.title">Tenant Contract</span> {{tenantContract.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="remanagementApp.tenantContract.code">Code</span></dt>
+                <dd>
+                    <span>{{tenantContract.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.effectiveDate">Effective Date</span></dt>
+                <dd>
+                    <span>{{tenantContract.effectiveDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{tenantContract.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{tenantContract.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.rent">Rent</span></dt>
+                <dd>
+                    <span>{{tenantContract.rent}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.deposit">Deposit</span></dt>
+                <dd>
+                    <span>{{tenantContract.deposit}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.utilities">Utilities</span></dt>
+                <dd>
+                    <span>{{tenantContract.utilities}}</span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.freePeriod">Free Period</span></dt>
+                <dd>
+                    <span *ngFor="let freePeriod of tenantContract.freePeriods; let last = last">
+                        <a [routerLink]="['/free-period', freePeriod?.id, 'view' ]">{{freePeriod.code}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.properties">Properties</span></dt>
+                <dd>
+                    <span *ngFor="let properties of tenantContract.properties; let last = last">
+                        <a [routerLink]="['/property', properties?.id, 'view' ]">{{properties.code}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.tenants">Tenants</span></dt>
+                <dd>
+                    <span *ngFor="let tenants of tenantContract.tenants; let last = last">
+                        <a [routerLink]="['/tenant', tenants?.id, 'view' ]">{{tenants.qid}}</a>{{last ? '' : ', '}}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="remanagementApp.tenantContract.contractDocument">Contract Document</span></dt>
+                <dd>
+                    <div *ngIf="tenantContract.contractDocument">
+                        <a [routerLink]="['/contract-document', tenantContract.contractDocument?.id, 'view']">{{tenantContract.contractDocument?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tenant-contract', tenantContract.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

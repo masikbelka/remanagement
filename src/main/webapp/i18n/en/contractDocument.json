@@ -1,0 +1,25 @@
+{
+  "remanagementApp": {
+    "contractDocument": {
+      "home": {
+        "title": "Contract Documents",
+        "createLabel": "Create a new Contract Document",
+        "createOrEditLabel": "Create or edit a Contract Document",
+        "notFound": "No Contract Documents found"
+      },
+      "created": "A new Contract Document is created with identifier {{ param }}",
+      "updated": "A Contract Document is updated with identifier {{ param }}",
+      "deleted": "A Contract Document is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Contract Document {{ id }}?"
+      },
+      "detail": {
+        "title": "Contract Document"
+      },
+      "code": "Code",
+      "type": "Type",
+      "fileName": "File Name",
+      "tenantContact": "Tenant Contact"
+    }
+  }
+}

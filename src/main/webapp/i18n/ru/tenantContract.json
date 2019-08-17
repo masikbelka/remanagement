@@ -1,0 +1,32 @@
+{
+  "remanagementApp": {
+    "tenantContract": {
+      "home": {
+        "title": "Tenant Contracts",
+        "createLabel": "Создать новый Tenant Contract",
+        "createOrEditLabel": "Создать или отредактировать Tenant Contract",
+        "notFound": "No Tenant Contracts found"
+      },
+      "created": "Новый Tenant Contract создан с идентификатором {{ param }}",
+      "updated": "Tenant Contract обновлен с идентификатором {{ param }}",
+      "deleted": "Tenant Contract удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Tenant Contract {{ id }}?"
+      },
+      "detail": {
+        "title": "Tenant Contract"
+      },
+      "code": "Code",
+      "effectiveDate": "Effective Date",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "rent": "Rent",
+      "deposit": "Deposit",
+      "utilities": "Utilities",
+      "freePeriod": "Free Period",
+      "properties": "Properties",
+      "tenants": "Tenants",
+      "contractDocument": "Contract Document"
+    }
+  }
+}
