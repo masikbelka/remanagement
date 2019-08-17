@@ -1,0 +1,77 @@
+{
+    "name": "TenantContract",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "effectiveDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "rent",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "deposit",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "utilities",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "freePeriod",
+            "otherEntityRelationshipName": "contract",
+            "relationshipName": "freePeriod",
+            "otherEntityField": "code",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "property",
+            "otherEntityRelationshipName": "contract",
+            "relationshipName": "properties",
+            "otherEntityField": "code",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "tenant",
+            "otherEntityRelationshipName": "contract",
+            "relationshipName": "tenants",
+            "otherEntityField": "qid",
+            "ownerSide": true
+        },
+        {
+            "relationshipName": "contractDocument",
+            "otherEntityName": "contractDocument",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190817172716",
+    "entityTableName": "tenant_contract",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

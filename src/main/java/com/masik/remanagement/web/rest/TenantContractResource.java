@@ -125,7 +125,7 @@ public class TenantContractResource {
      * @param id the id of the tenantContract to retrieve.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the tenantContract, or with status {@code 404 (Not Found)}.
      */
-    @GetMapping("/tenant-contracts/{id}")
+    @GetMapping("/tenant-contracts/document/{id}")
     public ResponseEntity<TenantContract> getTenantContractDocument(@PathVariable Long id) {
         log.debug("REST request to get TenantContract : {}", id);
         Optional<TenantContract> tenantContract = tenantContractRepository.findOneWithEagerRelationships(id);

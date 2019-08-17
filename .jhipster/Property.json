@@ -1,0 +1,73 @@
+{
+    "name": "Property",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "number",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "UnitType",
+            "fieldValues": "VILLA,APPARTMENT,OFFICE_SPACE,SHOWROOM"
+        },
+        {
+            "fieldName": "bedrooms",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "furnishing",
+            "fieldType": "Furnishing",
+            "fieldValues": "FURNISHED,UNFURNISHED"
+        },
+        {
+            "fieldName": "electricity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "water",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "parking",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "location",
+            "otherEntityRelationshipName": "property",
+            "relationshipName": "location",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityName": "tenantContract",
+            "otherEntityRelationshipName": "properties",
+            "relationshipName": "contract",
+            "otherEntityField": "id",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20190817172717",
+    "entityTableName": "property",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "ContractDocumentEntryRow",
+    "fields": [
+        {
+            "fieldName": "position",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "textEn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "textAr",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190817172721",
+    "entityTableName": "contract_document_entry_row",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

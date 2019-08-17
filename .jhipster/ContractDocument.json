@@ -1,0 +1,38 @@
+{
+    "name": "ContractDocument",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "ContractDocumentType",
+            "fieldValues": "LEASE,RENT,SELL"
+        },
+        {
+            "fieldName": "fileName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "tenantContract",
+            "otherEntityRelationshipName": "contractDocument",
+            "relationshipName": "tenantContact"
+        }
+    ],
+    "changelogDate": "20190817172720",
+    "entityTableName": "contract_document",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
